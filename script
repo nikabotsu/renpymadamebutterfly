@@ -1,0 +1,48 @@
+$ config.window_title = "cIO-cIO-sAN"
+define wife = Character("Cio-Cio-San", color = "#EBF4F5")
+
+$ left = Position(xpos=0.0, xanchor='left')
+$ right = Position(xpos=1.0, xanchor='right')
+$ center = Position()
+
+$ fade = Fade(.5, 0, .5) # Fade to black and back.
+$ dissolve = Dissolve(0.5)
+
+
+image naga = "bg habour.jpg"
+image ship2 = "bg ship.jpg"
+image nagasakiedit = Image("nagasakiedit.jpg")
+image nagasakidali = Image("ndali.jpg")
+image kites = Image("bg kites.jpg")
+image ship = Image("ship.jpg")
+image hill = Image("bg hill.jpg")
+image wife happy = Image("wife peace.png")
+image naga = Image("bg plz.jpg")
+
+label start:
+        scene naga
+        show naga
+        pause 1.0
+        "{cps=10}{b}{space=200}Hagasaki.{/b}{/cps}"
+        play music "audio/2.mp3" fadein 2.5
+
+        "{cps=120} Hagasaki is the first city I have ever visited where I could not find a place to eat and sleep{/cps}"
+        show ship2
+        "{cps=70}and rest when coming ashore without having to do so{/cps}"
+
+        scene nagasakiedit
+        window auto
+        "{cps=70}in a saloon, a gambling den, or a house of ill repute{/cps}"
+        show nagasakidali with dissolve
+        "{cps=70}and that is saying a great deal, for I have spent three years in travelling in foreign lands.{/cps}"
+        scene hill
+        "{cps=70}On the hill opposite ours lived a little tea-house girl.{/cps}"
+        window hide dissolve
+
+        pause 1.0
+        show wife happy at right with dissolve
+        pause 1.0
+
+        window show dissolve
+
+        wife "{cps=30}Konnichiwa{/cps}"
